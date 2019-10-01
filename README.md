@@ -1,4 +1,4 @@
-# <p align="center">pyTelegramBotAPI
+# <p align="center">KBPYTHON
 
 <p align="center">A simple, but extensible Python implementation for the <a href="https://core.telegram.org/bots/api">Telegram Bot API</a>.
 
