@@ -7,7 +7,7 @@ except ImportError:
 
 import six
 
-from telebot import util
+from keralasbot import util
 
 
 class JsonSerializable(object):
@@ -442,7 +442,7 @@ class Message(JsonDeserializable):
 
     def __html_text(self, text, entities):
         """
-        Author: @sviat9440
+        Author: @marioarus
         Message: "*Test* parse _formatting_, [url](https://example.com), [text_mention](tg://user?id=123456) and mention @username"
 
         Example:
