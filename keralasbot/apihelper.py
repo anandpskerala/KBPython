@@ -13,11 +13,11 @@ try:
     format_header_param = fields.format_header_param
 except ImportError:
     format_header_param = None
-import telebot
-from telebot import types
-from telebot import util
+import keralasbot
+from keralasbot import types
+from keralasbot import util
 
-logger = telebot.logger
+logger = keralasbot.logger
 proxy = None
 
 API_URL = "https://api.telegram.org/bot{0}/{1}"
