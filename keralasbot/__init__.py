@@ -11,7 +11,7 @@ import time
 
 import six
 
-logger = logging.getLogger('TeleBot')
+logger = logging.getLogger('keralasbot')
 formatter = logging.Formatter(
     '%(asctime)s (%(filename)s:%(lineno)d %(threadName)s) %(levelname)s - %(name)s: "%(message)s"'
 )
@@ -22,10 +22,10 @@ logger.addHandler(console_output_handler)
 
 logger.setLevel(logging.ERROR)
 
-from telebot import apihelper, types, util
+from keralasbot import apihelper, types, util
 
 """
-Module : telebot
+Module : keralasbot
 """
 
 
@@ -95,8 +95,8 @@ class Saver:
             return handlers
 
 
-class TeleBot:
-    """ This is TeleBot Class
+class keralasbot:
+    """ This is keralasbot Class
     Methods:
         getMe
         sendMessage
@@ -1327,7 +1327,7 @@ class TeleBot:
 
         Example:
 
-        bot = TeleBot('TOKEN')
+        bot = keralasbot('TOKEN')
 
         # Handles all messages which text matches regexp.
         @bot.message_handler(regexp='someregexp')
@@ -1498,270 +1498,270 @@ class TeleBot:
                     break
 
 
-class AsyncTeleBot(TeleBot):
+class AsyncKeralasBot(keralasbot):
     def __init__(self, *args, **kwargs):
-        TeleBot.__init__(self, *args, **kwargs)
+        keralasbot.__init__(self, *args, **kwargs)
 
     @util.async_dec()
     def enable_save_next_step_handlers(self, delay=120, filename="./.handler-saves/step.save"):
-        return TeleBot.enable_save_next_step_handlers(self, delay, filename)
+        return keralasbot.enable_save_next_step_handlers(self, delay, filename)
 
     @util.async_dec()
     def enable_save_reply_handlers(self, delay=120, filename="./.handler-saves/reply.save"):
-        return TeleBot.enable_save_reply_handlers(self, delay, filename)
+        return keralasbot.enable_save_reply_handlers(self, delay, filename)
 
     @util.async_dec()
     def disable_save_next_step_handlers(self):
-        return TeleBot.disable_save_next_step_handlers(self)
+        return keralasbot.disable_save_next_step_handlers(self)
 
     @util.async_dec()
     def disable_save_reply_handlers(self):
-        return TeleBot.enable_save_reply_handlers(self)
+        return keralasbot.enable_save_reply_handlers(self)
 
     @util.async_dec()
     def load_next_step_handlers(self, filename="./.handler-saves/step.save", del_file_after_loading=True):
-        return TeleBot.load_next_step_handlers(self, filename, del_file_after_loading)
+        return keralasbot.load_next_step_handlers(self, filename, del_file_after_loading)
 
     @util.async_dec()
     def load_reply_handlers(self, filename="./.handler-saves/reply.save", del_file_after_loading=True):
-        return TeleBot.load_reply_handlers(self, filename, del_file_after_loading)
+        return keralasbot.load_reply_handlers(self, filename, del_file_after_loading)
 
     @util.async_dec()
     def get_me(self):
-        return TeleBot.get_me(self)
+        return keralasbot.get_me(self)
 
     @util.async_dec()
     def get_file(self, *args):
-        return TeleBot.get_file(self, *args)
+        return keralasbot.get_file(self, *args)
 
     @util.async_dec()
     def download_file(self, *args):
-        return TeleBot.download_file(self, *args)
+        return keralasbot.download_file(self, *args)
 
     @util.async_dec()
     def get_user_profile_photos(self, *args, **kwargs):
-        return TeleBot.get_user_profile_photos(self, *args, **kwargs)
+        return keralasbot.get_user_profile_photos(self, *args, **kwargs)
 
     @util.async_dec()
     def get_chat(self, *args):
-        return TeleBot.get_chat(self, *args)
+        return keralasbot.get_chat(self, *args)
 
     @util.async_dec()
     def leave_chat(self, *args):
-        return TeleBot.leave_chat(self, *args)
+        return keralasbot.leave_chat(self, *args)
 
     @util.async_dec()
     def get_chat_administrators(self, *args):
-        return TeleBot.get_chat_administrators(self, *args)
+        return keralasbot.get_chat_administrators(self, *args)
 
     @util.async_dec()
     def get_chat_members_count(self, *args):
-        return TeleBot.get_chat_members_count(self, *args)
+        return keralasbot.get_chat_members_count(self, *args)
 
     @util.async_dec()
     def set_chat_sticker_set(self, *args):
-        return TeleBot.set_chat_sticker_set(self, *args)
+        return keralasbot.set_chat_sticker_set(self, *args)
 
     @util.async_dec()
     def delete_chat_sticker_set(self, *args):
-        return TeleBot.delete_chat_sticker_set(self, *args)
+        return keralasbot.delete_chat_sticker_set(self, *args)
 
     @util.async_dec()
     def get_chat_member(self, *args):
-        return TeleBot.get_chat_member(self, *args)
+        return keralasbot.get_chat_member(self, *args)
 
     @util.async_dec()
     def send_message(self, *args, **kwargs):
-        return TeleBot.send_message(self, *args, **kwargs)
+        return keralasbot.send_message(self, *args, **kwargs)
 
     @util.async_dec()
     def forward_message(self, *args, **kwargs):
-        return TeleBot.forward_message(self, *args, **kwargs)
+        return keralasbot.forward_message(self, *args, **kwargs)
 
     @util.async_dec()
     def delete_message(self, *args):
-        return TeleBot.delete_message(self, *args)
+        return keralasbot.delete_message(self, *args)
 
     @util.async_dec()
     def send_photo(self, *args, **kwargs):
-        return TeleBot.send_photo(self, *args, **kwargs)
+        return keralasbot.send_photo(self, *args, **kwargs)
 
     @util.async_dec()
     def send_audio(self, *args, **kwargs):
-        return TeleBot.send_audio(self, *args, **kwargs)
+        return keralasbot.send_audio(self, *args, **kwargs)
 
     @util.async_dec()
     def send_voice(self, *args, **kwargs):
-        return TeleBot.send_voice(self, *args, **kwargs)
+        return keralasbot.send_voice(self, *args, **kwargs)
 
     @util.async_dec()
     def send_document(self, *args, **kwargs):
-        return TeleBot.send_document(self, *args, **kwargs)
+        return keralasbot.send_document(self, *args, **kwargs)
 
     @util.async_dec()
     def send_sticker(self, *args, **kwargs):
-        return TeleBot.send_sticker(self, *args, **kwargs)
+        return keralasbot.send_sticker(self, *args, **kwargs)
 
     @util.async_dec()
     def send_video(self, *args, **kwargs):
-        return TeleBot.send_video(self, *args, **kwargs)
+        return keralasbot.send_video(self, *args, **kwargs)
 
     @util.async_dec()
     def send_video_note(self, *args, **kwargs):
-        return TeleBot.send_video_note(self, *args, **kwargs)
+        return keralasbot.send_video_note(self, *args, **kwargs)
 
     @util.async_dec()
     def send_media_group(self, *args, **kwargs):
-        return TeleBot.send_media_group(self, *args, **kwargs)
+        return keralasbot.send_media_group(self, *args, **kwargs)
 
     @util.async_dec()
     def send_location(self, *args, **kwargs):
-        return TeleBot.send_location(self, *args, **kwargs)
+        return keralasbot.send_location(self, *args, **kwargs)
 
     @util.async_dec()
     def edit_message_live_location(self, *args, **kwargs):
-        return TeleBot.edit_message_live_location(self, *args, **kwargs)
+        return keralasbot.edit_message_live_location(self, *args, **kwargs)
 
     @util.async_dec()
     def stop_message_live_location(self, *args, **kwargs):
-        return TeleBot.stop_message_live_location(self, *args, **kwargs)
+        return keralasbot.stop_message_live_location(self, *args, **kwargs)
 
     @util.async_dec()
     def send_venue(self, *args, **kwargs):
-        return TeleBot.send_venue(self, *args, **kwargs)
+        return keralasbot.send_venue(self, *args, **kwargs)
 
     @util.async_dec()
     def send_contact(self, *args, **kwargs):
-        return TeleBot.send_contact(self, *args, **kwargs)
+        return keralasbot.send_contact(self, *args, **kwargs)
 
     @util.async_dec()
     def send_chat_action(self, *args, **kwargs):
-        return TeleBot.send_chat_action(self, *args, **kwargs)
+        return keralasbot.send_chat_action(self, *args, **kwargs)
 
     @util.async_dec()
     def kick_chat_member(self, *args, **kwargs):
-        return TeleBot.kick_chat_member(self, *args, **kwargs)
+        return keralasbot.kick_chat_member(self, *args, **kwargs)
 
     @util.async_dec()
     def unban_chat_member(self, *args):
-        return TeleBot.unban_chat_member(self, *args)
+        return keralasbot.unban_chat_member(self, *args)
 
     @util.async_dec()
     def restrict_chat_member(self, *args, **kwargs):
-        return TeleBot.restrict_chat_member(self, *args, **kwargs)
+        return keralasbot.restrict_chat_member(self, *args, **kwargs)
 
     @util.async_dec()
     def promote_chat_member(self, *args, **kwargs):
-        return TeleBot.promote_chat_member(self, *args, **kwargs)
+        return keralasbot.promote_chat_member(self, *args, **kwargs)
 
     @util.async_dec()
     def export_chat_invite_link(self, *args):
-        return TeleBot.export_chat_invite_link(self, *args)
+        return keralasbot.export_chat_invite_link(self, *args)
 
     @util.async_dec()
     def set_chat_photo(self, *args):
-        return TeleBot.set_chat_photo(self, *args)
+        return keralasbot.set_chat_photo(self, *args)
 
     @util.async_dec()
     def delete_chat_photo(self, *args):
-        return TeleBot.delete_chat_photo(self, *args)
+        return keralasbot.delete_chat_photo(self, *args)
 
     @util.async_dec()
     def set_chat_title(self, *args):
-        return TeleBot.set_chat_title(self, *args)
+        return keralasbot.set_chat_title(self, *args)
 
     @util.async_dec()
     def set_chat_description(self, *args):
-        return TeleBot.set_chat_description(self, *args)
+        return keralasbot.set_chat_description(self, *args)
 
     @util.async_dec()
     def pin_chat_message(self, *args, **kwargs):
-        return TeleBot.pin_chat_message(self, *args, **kwargs)
+        return keralasbot.pin_chat_message(self, *args, **kwargs)
 
     @util.async_dec()
     def unpin_chat_message(self, *args):
-        return TeleBot.unpin_chat_message(self, *args)
+        return keralasbot.unpin_chat_message(self, *args)
 
     @util.async_dec()
     def edit_message_text(self, *args, **kwargs):
-        return TeleBot.edit_message_text(self, *args, **kwargs)
+        return keralasbot.edit_message_text(self, *args, **kwargs)
 
     @util.async_dec()
     def edit_message_media(self, *args, **kwargs):
-        return TeleBot.edit_message_media(self, *args, **kwargs)
+        return keralasbot.edit_message_media(self, *args, **kwargs)
 
     @util.async_dec()
     def edit_message_reply_markup(self, *args, **kwargs):
-        return TeleBot.edit_message_reply_markup(self, *args, **kwargs)
+        return keralasbot.edit_message_reply_markup(self, *args, **kwargs)
 
     @util.async_dec()
     def send_game(self, *args, **kwargs):
-        return TeleBot.send_game(self, *args, **kwargs)
+        return keralasbot.send_game(self, *args, **kwargs)
 
     @util.async_dec()
     def set_game_score(self, *args, **kwargs):
-        return TeleBot.set_game_score(self, *args, **kwargs)
+        return keralasbot.set_game_score(self, *args, **kwargs)
 
     @util.async_dec()
     def get_game_high_scores(self, *args, **kwargs):
-        return TeleBot.get_game_high_scores(self, *args, **kwargs)
+        return keralasbot.get_game_high_scores(self, *args, **kwargs)
 
     @util.async_dec()
     def send_invoice(self, *args, **kwargs):
-        return TeleBot.send_invoice(self, *args, **kwargs)
+        return keralasbot.send_invoice(self, *args, **kwargs)
 
     @util.async_dec()
     def answer_shipping_query(self, *args, **kwargs):
-        return TeleBot.answer_shipping_query(self, *args, **kwargs)
+        return keralasbot.answer_shipping_query(self, *args, **kwargs)
 
     @util.async_dec()
     def answer_pre_checkout_query(self, *args, **kwargs):
-        return TeleBot.answer_pre_checkout_query(self, *args, **kwargs)
+        return keralasbot.answer_pre_checkout_query(self, *args, **kwargs)
 
     @util.async_dec()
     def edit_message_caption(self, *args, **kwargs):
-        return TeleBot.edit_message_caption(self, *args, **kwargs)
+        return keralasbot.edit_message_caption(self, *args, **kwargs)
 
     @util.async_dec()
     def answer_inline_query(self, *args, **kwargs):
-        return TeleBot.answer_inline_query(self, *args, **kwargs)
+        return keralasbot.answer_inline_query(self, *args, **kwargs)
 
     @util.async_dec()
     def answer_callback_query(self, *args, **kwargs):
-        return TeleBot.answer_callback_query(self, *args, **kwargs)
+        return keralasbot.answer_callback_query(self, *args, **kwargs)
 
     @util.async_dec()
     def send_sticker(self, *args, **kwargs):
-        return TeleBot.send_sticker(self, *args, **kwargs)
+        return keralasbot.send_sticker(self, *args, **kwargs)
 
     @util.async_dec()
     def get_sticker_set(self, *args, **kwargs):
-        return TeleBot.get_sticker_set(self, *args, **kwargs)
+        return keralasbot.get_sticker_set(self, *args, **kwargs)
 
     @util.async_dec()
     def upload_sticker_file(self, *args, **kwargs):
-        return TeleBot.upload_sticker_file(self, *args, **kwargs)
+        return keralasbot.upload_sticker_file(self, *args, **kwargs)
 
     @util.async_dec()
     def create_new_sticker_set(self, *args, **kwargs):
-        return TeleBot.create_new_sticker_set(self, *args, **kwargs)
+        return keralasbot.create_new_sticker_set(self, *args, **kwargs)
 
     @util.async_dec()
     def add_sticker_to_set(self, *args, **kwargs):
-        return TeleBot.add_sticker_to_set(self, *args, **kwargs)
+        return keralasbot.add_sticker_to_set(self, *args, **kwargs)
 
     @util.async_dec()
     def set_sticker_position_in_set(self, *args, **kwargs):
-        return TeleBot.set_sticker_position_in_set(self, *args, **kwargs)
+        return keralasbot.set_sticker_position_in_set(self, *args, **kwargs)
 
     @util.async_dec()
     def delete_sticker_from_set(self, *args, **kwargs):
-        return TeleBot.delete_sticker_from_set(self, *args, **kwargs)
+        return keralasbot.delete_sticker_from_set(self, *args, **kwargs)
 
     @util.async_dec()
     def send_poll(self, *args, **kwargs):
-        return TeleBot.send_poll(self, *args, **kwargs)
+        return keralasbot.send_poll(self, *args, **kwargs)
 
     @util.async_dec()
     def stop_poll(self, *args, **kwargs):
-        return TeleBot.stop_poll(self, *args, **kwargs)
+        return keralasbot.stop_poll(self, *args, **kwargs)
